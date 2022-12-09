@@ -18,12 +18,10 @@ export default function MoviesList() {
         return <img src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw700" />
     }
 
-    console.log(imgUrl)
-
     return (
         <Movie>
             {imgUrl.map(item =>
-                <Link to="/sessoes">
+                <Link to={`/sessoes/${item.id}`}>
                     <img src={item.posterURL} />
                 </Link>
             )}

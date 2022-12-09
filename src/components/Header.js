@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import SubHeader from "./SubHeader"
-import ContainerMovies from "./ContainerMovies"
 
 export default function Head() {
     return (
