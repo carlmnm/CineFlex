@@ -13,12 +13,8 @@ export default function Acentos(props) {
     //const [cadeiras, setCadeiras] = useState([])
     const [id, setId] = useState([])
     const navigate = useNavigate()
-    console.log(cadeiras)
+    console.log(id)
     
-    //const [circleColor, setCircleColor] = useState("")
-    //const [borderColor, setBorderColor] = useState("")
-
-
     useEffect(() => {
         const requisicao = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/showtimes/${idSessao}/seats`)
 
@@ -49,12 +45,14 @@ export default function Acentos(props) {
     function reserveSeats(event) {
         event.preventDefault();
 
-        const requisicao = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
-        ids: {id},
-        name: {nome},
-        cpf: {cpfClient}
+        const request = axios.post("https://mock-api.driven.com.br/api/v8/cineflex/seats/book-many", {
+        ids: id,
+        name: nome,
+        cpf: cpfClient
         })
-        requisicao.then(() => navigate("/sucesso"))
+        request.then(() => navigate("/sucesso"))
+  
+
 
     }
 
