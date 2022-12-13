@@ -1,10 +1,10 @@
 
 import DaysLipxpxst from "./ContainerDays"
 import Head from "./Header"
-import PageTitle from "./SubHeader"
 import Foot from "./FooterSessoes"
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom"
+
 
 
 
@@ -27,7 +27,9 @@ export default function Screen4(props) {
     return (
         <>
             <Head />
-            <PageTitle />
+            <Title>
+                <p>Pedido feito <br/> com sucesso!</p>
+            </Title>
             <MovieSession data-test="movie-info">
 
                 Filme e Sessão
@@ -112,5 +114,20 @@ p{
     font-size: 18px;
     color: #FFFFFF;
     margin-top: 5px;
+}
+`
+
+const Title = styled.div`
+width: 374px;
+height: 110px;
+display: flex;
+align-items: center;
+justify-content: center;
+p{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Roboto';
+    color: #247A6B;
+    text-align: center;
 }
 `
