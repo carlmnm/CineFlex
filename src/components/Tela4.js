@@ -4,11 +4,26 @@ import Head from "./Header"
 import PageTitle from "./SubHeader"
 import Foot from "./FooterSessoes"
 import styled from "styled-components"
+import { useNavigate } from "react-router-dom"
+
 
 
 export default function Screen4(props) {
-    const { cadeiras, setCadeiras, title, setTitle, time, setTime, data, setData, nome, cpfClient } = props
+    const navigate = useNavigate()
+    const { cadeiras, setCadeiras, title, setTitle, time, setTime, data, setData, nome, setNome, cpfClient, setCpfClient } = props
     console.log(cadeiras)
+
+    function reset(){
+        setCadeiras([])
+        setTitle(undefined)
+        setTime(undefined)
+        setData(undefined)
+        setNome("")
+        setCpfClient("")
+        navigate("/")
+
+    }
+
     return (
         <>
             <Head />
@@ -39,6 +54,10 @@ export default function Screen4(props) {
                         CPF: {cpfClient}
                     </p>
                 </Info>
+
+                <Voltar onClick={reset}>
+                    <p>Voltar para a Home</p>
+                </Voltar>
             </MovieSession>
         </>
     )
@@ -72,4 +91,22 @@ p{
 const Info = styled.div`
 margin-top: 15px;
 margin-bottom: 55px
+`
+
+const Voltar = styled.button`
+width: 225px;
+height: 42px;
+background: #E8833A;
+border-radius: 3px;
+display: flex;
+justify-content: center;
+align-items: center;
+p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-top: 5px;
+}
 `
