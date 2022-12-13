@@ -13,7 +13,7 @@ export default function Screen4(props) {
     const { cadeiras, setCadeiras, title, setTitle, time, setTime, data, setData, nome, setNome, cpfClient, setCpfClient } = props
     console.log(cadeiras)
 
-    function reset(){
+    function reset() {
         setCadeiras([])
         setTitle(undefined)
         setTime(undefined)
@@ -28,14 +28,16 @@ export default function Screen4(props) {
         <>
             <Head />
             <PageTitle />
-            <MovieSession>
+            <MovieSession data-test="movie-info">
 
                 Filme e Sessão
                 <Info>
                     <p>{title}</p>
                     <p>{data} - {time}</p>
                 </Info>
+            </MovieSession>
 
+            <MovieSession data-test="seats-info">
                 Ingressos
                 <Info>
                     {cadeiras.map((item) =>
@@ -44,7 +46,9 @@ export default function Screen4(props) {
                         </p>
                     )}
                 </Info>
+            </MovieSession>
 
+            <MovieSession data-test="client-info">
                 Comprador
                 <Info>
                     <p>
@@ -55,7 +59,7 @@ export default function Screen4(props) {
                     </p>
                 </Info>
 
-                <Voltar onClick={reset}>
+                <Voltar data-test="go-home-btn" onClick={reset}>
                     <p>Voltar para a Home</p>
                 </Voltar>
             </MovieSession>

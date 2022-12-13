@@ -28,14 +28,14 @@ export default function DaysList() {
     return (
         <Days>
             {day.map((item) =>
-                <>
+                <div data-test="movie-day">
                     <Date>
                         {item.weekday} - {item.date}
                     </Date>
 
                     <ContainerTime>
                         {item.showtimes.map((hora) => (
-                            <Link to={`/assentos/${hora.id}`}>
+                            <Link data-test="showtime" to={`/assentos/${hora.id}`}>
                                 <Time>
                                     <p>
                                         {hora.name}
@@ -44,7 +44,7 @@ export default function DaysList() {
                             </Link>
                         ))}
                     </ContainerTime>
-                </>
+                </div>
             )}
         </Days>
     )

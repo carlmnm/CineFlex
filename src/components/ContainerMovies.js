@@ -21,7 +21,7 @@ export default function MoviesList() {
     return (
         <Movie>
             {imgUrl.map(item =>
-                <Link to={`/sessoes/${item.id}`}>
+                <Link data-test="movie" to={`/sessoes/${item.id}`}>
                     <img src={item.posterURL} />
                 </Link>
             )}

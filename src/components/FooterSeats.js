@@ -27,7 +27,7 @@ export default function Foot(props) {
 
     return (
         <>
-            <ContainerFooter>
+            <ContainerFooter data-test="footer">
                 <MovieTitle>
                     {title}
                     <Hour>

@@ -23,7 +23,7 @@ export default function Foot() {
 
     return (
         <>
-            <ContainerFooter>
+            <ContainerFooter data-test="footer">
                 <MovieTitle>
                     {title}
                 </MovieTitle>

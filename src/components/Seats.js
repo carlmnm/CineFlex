@@ -64,6 +64,7 @@ export default function Acentos(props) {
                         cor={item.isAvailable}
                         className={cadeiras.includes(item.name) && item.isAvailable ? "clicado" : item.isAvailable ? "disponivel" : "indisponivel"}
                         onClick={() => verificar(item.name, item.isAvailable, item.id)}
+                        data-test="seat"
                     >
                         {item.name}
                     </div>
@@ -73,12 +74,12 @@ export default function Acentos(props) {
             <form onSubmit={reserveSeats}>
                 <Label>
                     <labelText>Nome do comprador:</labelText>
-                    <Input onChange={e => setNome(e.target.value)} value={nome} type="text" id="campoNome" placeholder="Digite seu nome..." />
+                    <Input data-test="client-name" onChange={e => setNome(e.target.value)} value={nome} type="text" id="campoNome" placeholder="Digite seu nome..." />
                 </Label>
 
                 <Label>
                     <labelText>CPF do comprador:</labelText>
-                    <Input onChange={e => setCpfClient(e.target.value)} value={cpfClient} type="text" id="campoCPF" placeholder="Digite seu CPF..." />
+                    <Input data-test="client-cpf" onChange={e => setCpfClient(e.target.value)} value={cpfClient} type="text" id="campoCPF" placeholder="Digite seu CPF..." />
                 </Label>
                 <ButtonReserveSeats type="submit">
                     <p>
