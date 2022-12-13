@@ -174,13 +174,14 @@ background: white;
 border: 1px solid #D5D5D5;
 border-radius: 3px;
 margin-top: 3px;
+padding-left: 18px;
 ::placeholder{
     font-family: 'Roboto';
     font-style: italic;
     font-weight: 400;   
     font-size: 18px;
     color: #AFAFAF;
-    margin: 18px
+    margin-left: 18px;
 }
 `
 
