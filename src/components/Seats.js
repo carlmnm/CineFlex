@@ -81,7 +81,7 @@ export default function Acentos(props) {
                     <labelText>CPF do comprador:</labelText>
                     <Input data-test="client-cpf" onChange={e => setCpfClient(e.target.value)} value={cpfClient} type="text" id="campoCPF" placeholder="Digite seu CPF..." />
                 </Label>
-                <ButtonReserveSeats type="submit">
+                <ButtonReserveSeats data-test="book-seat-btn" type="submit">
                     <p>
                         {"Reservar assento(s)"}
                     </p>
